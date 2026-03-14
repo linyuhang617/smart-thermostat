@@ -7,7 +7,7 @@ STM32 smart thermostat with PID control and Zigbee - Sinopé style
 
 ## Progress
 - [x] Slice 1: Heartbeat (LED blink + System OK)
-- [ ] Slice 2: Temperature sensing
+- [x] Slice 2: Temperature sensing
 - [ ] Slice 3: PID control ⭐
 - [ ] Slice 4: User interface (CLI)
 - [ ] Slice 5: Scheduling (RTC)
