@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "author": "smart-thermostat",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-stm32-bluepill", "id": "stm32", "top": 0, "left": 0 },
+    { "type": "wokwi-ntc-temperature-sensor", "id": "ntc1", "top": -80, "left": -100 },
+    { "type": "wokwi-led", "id": "led1", "top": -80, "left": 150, "attrs": { "color": "red" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": -40, "left": 150, "attrs": { "resistance": "220" } }
+  ],
+  "connections": [
+    [ "stm32:A9",  "$serialMonitor:RX", "" ],
+    [ "stm32:A10", "$serialMonitor:TX", "" ],
+    [ "stm32:A0",  "ntc1:OUT", "green",  [] ],
+    [ "stm32:5V",  "ntc1:VCC", "red",    [] ],
+    [ "stm32:GND", "ntc1:GND", "black",  [] ],
+    [ "stm32:A1",  "r1:1",     "orange", [] ],
+    [ "r1:2",      "led1:A",   "orange", [] ],
+    [ "led1:C",    "stm32:GND","black",  [] ]
+  ]
+}
